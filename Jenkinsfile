@@ -11,13 +11,22 @@ pipeline {
             }
         }
         stage('Build') {
-            steps {
-                sh '''
-                    docker --version
-                    docker ps
-                    docker build -t nginx-test:v2 .
-                '''
-            }
+            agent {
+                docker {
+                    image 'docker:dind'
+                    // Run the container on the node specified at the
+                    // top-level of the Pipeline, in the same workspace,
+                    // rather than on a new node entirely:
+                    reuseNode true
+                    }
+                }
+                steps {
+                    sh '''
+                        docker --version
+                        docker ps
+                        docker build -t nginx-test:v2 .
+                    '''
+                }
         }
         // stage('Login') {
         //     steps {
