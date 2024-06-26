@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-        docker { label 'docker-agent-alpine' }
-    }
+    agent any
     environment {
         DOCKERHUB_CREDENTIALS = credentials('chlbutler-dockerhub')
     }
@@ -13,6 +11,7 @@ pipeline {
         }
         stage('Build') {
             steps {
+                sh 'docker --version'
                 sh 'docker build -t nginx-test:v2 .'
             }
         }
