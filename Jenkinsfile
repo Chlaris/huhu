@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'docker build -t  chlbutler/dp-alpine:latest .'
+                sh 'docker build -t  chlbutler/nginx-test:v2 .'
             }
         }
         stage('Login') {
@@ -21,7 +21,7 @@ pipeline {
         }
         stage('Push') {
             steps {
-                sh 'docker push chlbutler/dp-alpine:latest'
+                sh 'docker push chlbutler/nginx-test:v2'
             }
         }
     }
