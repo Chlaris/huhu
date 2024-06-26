@@ -14,7 +14,6 @@ pipeline {
                 sh '''
                     docker --version
                     docker ps
-                    
                     docker build -t nginx-test:v2 .
                     DOCKER_TLS_VERIFY: 0
 
