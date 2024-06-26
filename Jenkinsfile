@@ -16,6 +16,7 @@ pipeline {
                     ls -la
                     chmod 777 Dockerfile
                     chmod 777 Jenkinsfile
+                    ls -la
                     docker build -t nginx-test:v2 .
 
                 '''
