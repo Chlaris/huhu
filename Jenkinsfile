@@ -10,7 +10,7 @@ pipeline {
             steps {
                 withDockerRegistry(credentialsId: 'chlbutler-dockerhub', url: 'https://github.com/Chlaris/huhu') {
                     sh 'docker build -t chlbutler/nginx-test:v2 .'
-                    sh 'docker push -t chlbutler/nginx-test:v2'
+                    sh 'docker push chlbutler/nginx-test:v2'
                 }
             }
         }
