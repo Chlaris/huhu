@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'docker build -t  chlbutler/nginx-test:v2 .'
+                sh 'docker build -t nginx-test:v2 .'
             }
         }
         stage('Login') {
