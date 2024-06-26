@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        cloud { docker-agent-alpine }
+        cloud { label 'docker-agent-alpine' }
     }
     environment {
         DOCKERHUB_CREDENTIALS = credentials('chlbutler-dockerhub')
