@@ -13,10 +13,7 @@ pipeline {
             steps {
                 sh '''
                     docker --version
-                    ls -la
-                    chmod 777 Dockerfile
-                    chmod 777 Jenkinsfile
-                    ls -la
+                    docker ps
                     
                     docker build -t nginx-test:v2 .
                     DOCKER_TLS_VERIFY: 0
