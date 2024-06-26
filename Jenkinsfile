@@ -11,8 +11,12 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'docker --version'
-                sh 'docker build -t nginx-test:v2 .'
+                sh '''
+                    docker --version'
+                    ls -la
+                    docker build -t nginx-test:v2 .'
+
+                '''
             }
         }
         stage('Login') {
