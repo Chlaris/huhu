@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git credentialsId: 'nginx-dockerhub', url: 'https://github.com/Chlaris/huhu.git', branch: 'main'
+                git credentialsId: 'chlbutler-dockerhub', url: 'https://github.com/Chlaris/huhu.git', branch: 'main'
             }
         }
         stage ('Build image') {
