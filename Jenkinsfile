@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent docker { image 'ubuntu:latest' }
     environment {
         DOCKERHUB_CREDENTIALS = credentials('chlbutler-dockerhub')
     }
