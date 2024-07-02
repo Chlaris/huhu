@@ -1,8 +1,6 @@
 pipeline {
     agent {
-        node {
-            lable 'new-node'
-        }
+        lable 'new-node'
     }
     // {docker { image 'docker:dind' }}
     environment {
