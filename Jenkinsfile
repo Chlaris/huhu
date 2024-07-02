@@ -1,5 +1,9 @@
 pipeline {
-    agent any
+    agent {
+        node {
+            lable 'new-node'
+        }
+    }
     // {docker { image 'docker:dind' }}
     environment {
         DOCKERHUB_CREDENTIALS = credentials('chlbutler-dockerhub')
